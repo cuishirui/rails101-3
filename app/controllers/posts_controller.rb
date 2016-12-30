@@ -20,11 +20,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-     @group = Group.find(:group_id)
+     @group = Group.find(params[:group_id])
      @post  = Post.find(params[:id])
      @post.destroy
 
-     redirect_to group_post_path(@group)
+     redirect_to group_path(@group)
   end
 
   private
